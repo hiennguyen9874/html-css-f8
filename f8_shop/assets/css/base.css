@@ -6,12 +6,13 @@
   --black-color: #000;
   --text-color: #333;
   --border-color: #dbdbdb;
-  --navbar-height: 3rem;
-  --header-height: 12rem;
+  --navbar-height: 30px;
+  --header-height: 120px;
   --header-with-search-height: calc(
     var(--header-height) - var(--navbar-height)
   );
   --star-gold-color: #ffce3e;
+  --header-sort-bar-height: 46px;
 }
 
 * {
@@ -27,16 +28,6 @@ html {
 }
 
 /* Responsive */
-
-.grid {
-  width: 1200px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.grid__full-width {
-  width: 100%;
-}
 
 .grid__row {
   display: flex;
@@ -195,6 +186,8 @@ html {
   list-style: none;
   padding: 10px 16px;
   display: none;
+  z-index: 1;
+  box-shadow: 0 1px 2px #e0e0e0;
 }
 
 .select__input-link {
