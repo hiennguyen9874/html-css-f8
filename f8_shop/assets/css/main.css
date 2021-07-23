@@ -533,6 +533,21 @@
   display: flex;
 }
 
+.header__mobile-nav__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: none;
+}
+
+.header__search-checkbox:checked ~ .header__mobile-nav__overlay {
+  display: block;
+}
+
 .header__cart {
   width: 150px;
   text-align: center;
@@ -543,6 +558,7 @@
   display: inline-block;
   padding: 0 6px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-icon {
@@ -974,6 +990,16 @@
   transform: translateY(-50%);
 }
 
+.header__sort-item--active .header__sort-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 1px;
+  height: 2px;
+  background-color: red;
+}
+
 .header__sort-item:first-child .header__sort-link::before {
   display: none;
 }
@@ -1054,6 +1080,62 @@
 .category-item__link:hover {
   /* right: -4px; */
   color: var(--primary-color);
+}
+
+/* Mobile Category */
+.mobile-category {
+  display: none;
+}
+
+.mobile-category__list {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.mobile-category__list::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-category__item {
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+.mobile-category__item:nth-child(3n + 1) .mobile-category__link {
+  background-color: #87afd8;
+}
+
+.mobile-category__item:nth-child(3n + 2) .mobile-category__link {
+  background-color: #76c0bd;
+}
+
+.mobile-category__item:nth-child(3n + 3) .mobile-category__link {
+  background-color: #88cf81;
+}
+
+.mobile-category__link {
+  --line-height: 2rem;
+  text-decoration: none;
+  color: var(--white-color);
+  font-size: 1.4rem;
+  line-height: var(--line-height);
+  text-align: center;
+  width: 110px;
+  height: calc(var(--line-height) * 2);
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  border-radius: 4px;
+  font-weight: 300;
+  overflow: hidden;
+  padding: 0px 8px 0px 8px;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .home-filter {
